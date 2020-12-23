@@ -80,6 +80,7 @@ function opcionElegida() {
 	if (contContinuar == (matriz.length * 2)){
 			document.getElementById('lineaDeProgreso2').style.width = "100%";
 			alert("Juego finalizado");
+			location.reload();	//Recarga la pagina
 		}
 	if (contContinuar % 2 == 0 && contContinuar != 0) {
 		document.getElementById('correcto').style.display = "";
