@@ -4,6 +4,8 @@ var matriz = ["Baker","Businessman","Businesswoman","Carpenter",
 			  "Lifeguard","Mayor","Photographer",
 			  "Ranger","Secretary","Waiter","Waitress"];
 
+var contador = 0;
+
 function numAleatorio(x) {
 	return Math.floor(Math.random() * x);
 }
@@ -64,6 +66,7 @@ function opcionElegida() {
 				document.getElementById('underNav').style.backgroundColor = "#B8F28B";
 				document.getElementById('calificar').style.borderColor = "#78C800";
 				document.getElementById('correcto').style.display = "flex";
+				contador++;
 			}
 			else {
 				document.getElementById('sonidoIncorrecto').play();
@@ -79,7 +82,7 @@ function opcionElegida() {
 	contContinuar++;
 	if (contContinuar == (matriz.length * 2)){
 			document.getElementById('lineaDeProgreso2').style.width = "100%";
-			alert("Juego finalizado");
+			alert("Juego finalizado\nCorrectos:" + contador + "/" + matriz.length);
 			location.reload();	//Recarga la pagina
 		}
 	if (contContinuar % 2 == 0 && contContinuar != 0) {
